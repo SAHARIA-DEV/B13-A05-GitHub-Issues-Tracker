@@ -1,61 +1,55 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Login</title>
-<script src="https://cdn.tailwindcss.com"></script>
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-<div class="bg-white w-[420px] p-8 rounded-xl shadow">
+    <div class="bg-white w-[420px] p-8 rounded-xl shadow">
 
-<div class="flex justify-center mb-4">
-<img src="./assets/github-logo.png" class="w-20">
-</div>
+        <div class="flex justify-center mb-4">
+            <img src="./assets/github-logo.png" class="w-20">
+        </div>
 
-<h1 class="text-center text-2xl font-bold">
-GitHub Issues Tracker
-</h1>
+        <h1 class="text-center text-2xl font-bold">
+            GitHub Issues Tracker
+        </h1>
 
-<p class="text-center text-gray-500 mb-6">
-Sign in to manage your issues
-</p>
+        <p class="text-center text-gray-500 mb-6">
+            Sign in to manage your issues
+        </p>
 
-<form onsubmit="login(event)">
+        <form onsubmit="login(event)">
 
-<label class="block mb-2">Username</label>
+            <label class="block mb-2">Username</label>
 
-<input
-id="username"
-type="text"
-placeholder="Enter Username"
-class="w-full border p-3 rounded mb-2"
-/>
+            <input id="username" type="text" placeholder="Enter Username" class="w-full border p-3 rounded mb-2" />
 
-<p class="text-sm text-purple-600 mb-4">
-Default: admin
-</p>
+            <p class="text-sm text-purple-600 mb-4">
+                Default: admin
+            </p>
 
-<label class="block mb-2">Password</label>
+            <label class="block mb-2">Password</label>
 
-<input
-id="password"
-type="password"
-placeholder="Enter Password"
-class="w-full border p-3 rounded mb-2"
-/>
+            <input id="password" type="password" placeholder="Enter Password" class="w-full border p-3 rounded mb-2" />
 
-<p class="text-sm text-purple-600 mb-4">
-Default: admin123
-</p>
+            <p class="text-sm text-purple-600 mb-4">
+                Default: admin123
+            </p>
 
-<button
-class="w-full py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded">
-Sign In
-</button>
+            <button class="w-full py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded">
+                Sign In
+            </button>
 
-</form>
+        </form>
 
+
+
+        <script src="./script.js"></script>
 
 </body>
+
 </html>
