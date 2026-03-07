@@ -35,20 +35,20 @@ async function loadIssues(type = "all") {
 
     setActiveTab(type);
 
-    spinner.classList.remove("hidden");
+    spinner.classList.remove("hidden")
 
     const res = await fetch(API);
-    const data = await res.json();
+    const data = await res.json()
 
-    spinner.classList.add("hidden");
+    spinner.classList.add("hidden")
 
     let issues = data.data;
 
-    if (type === "open") {
+    if (type === "open"){
         issues = issues.filter(i => i.status === "open");
     }
 
-    if (type === "closed") {
+    if (type === "closed"){
         issues = issues.filter(i => i.status === "closed");
     }
 
