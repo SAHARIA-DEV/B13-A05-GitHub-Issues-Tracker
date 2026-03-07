@@ -129,3 +129,60 @@ ${issue.createdAt}
 
 }
 
+async function openModal(id) {
+
+    const res = await fetch(
+        `https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`
+    );
+
+    const data = await res.json();
+
+    const issue = data.data;
+
+    document.getElementById("modalTitle").innerText = issue.title;
+
+    document.getElementById("modalDesc").innerText = issue.description;
+
+    document.getElementById("modalAuthor").innerText = issue.author;
+
+    document.getElementById("modalDate").innerText = issue.createdAt;
+
+    document.getElementById("modalAssignee").innerText = issue.author;
+
+    document.getElementById("modalPriority").innerText = issue.priority;
+
+    const modal = document.getElementById("modal")
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+
+}
+
+function closeModal() {
+
+    const modal = document.getElementById("modal")
+
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+
+}
+
+async function searchIssues() {
+
+    const text = document.getElementById("searchInput").value
+
+    if (text === "") {
+        loadIssues();
+        return;
+    }
+
+    const res = await fetch(
+        `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`
+    );
+
+    const data = await res.json()
+
+    renderIssues(data.data)
+
+}
+
+loadIssues();
