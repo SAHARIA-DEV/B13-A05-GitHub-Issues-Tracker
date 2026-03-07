@@ -1,20 +1,20 @@
 const API = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
 
 const container = document.getElementById("issuesContainer");
-const spinner = document.getElementById("spinner");
+const spinner = document.getElementById("spinner")
 
 function login(e) {
 
     e.preventDefault();
 
-    const user = document.getElementById("username").value;
-    const pass = document.getElementById("password").value;
+    const user = document.getElementById('username').value;
+    const pass = document.getElementById('password').value
 
-    if (user === "admin" && pass === "admin123") {
+    if (user === "admin" && pass === 'admin123') {
         window.location = "main-page.html";
     }
     else {
-        alert("Invalid login");
+        alert("Invalid login")
     }
 
 }
@@ -23,11 +23,13 @@ function setActiveTab(type) {
 
     document.querySelectorAll(".tab").forEach(btn => {
         btn.classList.remove("bg-purple-600", "text-white");
+
         btn.classList.add("bg-white", "border");
     });
 
     document.getElementById(type + "Tab").classList.remove("bg-white", "border");
-    document.getElementById(type + "Tab").classList.add("bg-purple-600", "text-white");
+
+    document.getElementById(type + "Tab").classList.add("bg-purple-600", "text-white")
 
 }
 
@@ -131,9 +133,7 @@ ${issue.createdAt}
 
 async function openModal(id) {
 
-    const res = await fetch(
-        `https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`
-    );
+    const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`)
 
     const data = await res.json();
 
@@ -141,15 +141,15 @@ async function openModal(id) {
 
     document.getElementById("modalTitle").innerText = issue.title;
 
-    document.getElementById("modalDesc").innerText = issue.description;
+    document.getElementById("modalDesc").innerText = issue.description
 
     document.getElementById("modalAuthor").innerText = issue.author;
 
-    document.getElementById("modalDate").innerText = issue.createdAt;
+    document.getElementById("modalDate").innerText = issue.createdAt
 
     document.getElementById("modalAssignee").innerText = issue.author;
 
-    document.getElementById("modalPriority").innerText = issue.priority;
+    document.getElementById("modalPriority").innerText = issue.priority
 
     const modal = document.getElementById("modal")
     modal.classList.remove("hidden");
@@ -175,9 +175,7 @@ async function searchIssues() {
         return;
     }
 
-    const res = await fetch(
-        `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`
-    );
+    const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`);
 
     const data = await res.json()
 
